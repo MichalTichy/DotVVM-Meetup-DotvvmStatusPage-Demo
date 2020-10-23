@@ -1,0 +1,13 @@
+﻿@viewModel DotvvmStatusPageDemo.ViewModels.TestPageViewModel, DotvvmStatusPageDemo
+@masterPage Views/MasterPage.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+    <h1>I work just fine!</h1>
+    <h2>But it's kinda ugly :(</h2>
+
+
+    <div>
+
+    </div>
+</dot:Content>
+

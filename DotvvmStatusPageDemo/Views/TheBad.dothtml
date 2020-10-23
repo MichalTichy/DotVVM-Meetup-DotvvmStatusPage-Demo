@@ -1,0 +1,9 @@
+﻿@viewModel DotvvmStatusPageDemo.ViewModels.TestPageViewModel, DotvvmStatusPageDemo
+@masterPage Views/MasterPage.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+    <h1>I am the bad one!</h1>
+    <the:BadControl />
+
+</dot:Content>
+

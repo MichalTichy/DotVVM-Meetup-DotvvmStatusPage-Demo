@@ -1,0 +1,10 @@
+﻿@viewModel DotvvmStatusPageDemo.ViewModels.DefaultViewModel, DotvvmStatusPageDemo
+@masterPage Views/MasterPage.dotmaster
+<dot:Content ContentPlaceHolderID="MainContent">
+    <h1>
+        <dot:RouteLink RouteName="TheGood">The good</dot:RouteLink>,
+        <dot:RouteLink RouteName="TheGood">the bad</dot:RouteLink> and 
+        <dot:RouteLink RouteName="TheUgly">the ugly.</dot:RouteLink>
+    </h1>
+    And of course the <dot:RouteLink RouteName="StatusPage">status page</dot:RouteLink>.
+</dot:Content>
