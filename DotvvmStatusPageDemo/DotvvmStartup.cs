@@ -16,8 +16,13 @@ namespace DotvvmStatusPageDemo
             ConfigureControls(config, applicationPath);
             ConfigureResources(config, applicationPath);
 
+            ConfigureEvilnes(config);
+        }
+
+        private static void ConfigureEvilnes(DotvvmConfiguration config)
+        {
             var aggregateMarkupFileLoader = config.ServiceProvider.GetService<IMarkupFileLoader>() as AggregateMarkupFileLoader;
-            
+
             aggregateMarkupFileLoader.Loaders.RemoveAt(0);
             aggregateMarkupFileLoader.Loaders.Add(new EvilMarkupFileLoader());
         }
@@ -48,7 +53,7 @@ namespace DotvvmStatusPageDemo
 		public void ConfigureServices(IDotvvmServiceCollection options)
         {
             options.AddStatusPage(pageOptions => pageOptions.CompileAfterPageLoads=false);
-            //options.AddStatusPageApi();
+            options.AddStatusPageApi();
             options.AddDefaultTempStorages("temp");
 
 		}

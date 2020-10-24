@@ -25,24 +25,16 @@ namespace DotvvmStatusPageDemo
             services.AddDotVVM<DotvvmStartup>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-            // use DotVVM
             var dotvvmConfiguration = app.UseDotVVM<DotvvmStartup>(env.ContentRootPath,modifyConfiguration:
                 configuration =>
                 {
                     configuration.Markup.ViewCompilation.Mode = ViewCompilationMode.Lazy;
-                    configuration.ExperimentalFeatures.ServerSideViewModelCache.Enabled = true;
                 });
 
             dotvvmConfiguration.AssertConfigurationIsValid();
-            // use static files
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(env.WebRootPath)
-            });
         }
     }
 }

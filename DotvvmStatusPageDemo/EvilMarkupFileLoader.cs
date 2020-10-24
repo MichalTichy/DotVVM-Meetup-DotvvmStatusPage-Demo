@@ -27,7 +27,7 @@ namespace DotvvmStatusPageDemo
             {
                 EvilizeContentReaderFunc(markupFile, () =>
                 {
-                    Thread.Sleep(TimeSpan.FromSeconds(15));
+                    Thread.Sleep(TimeSpan.FromSeconds(10));
                 });
             }
 
