@@ -1,4 +1,5 @@
-﻿using DotVVM.Diagnostics.StatusPage;
+﻿using System.Threading.Tasks;
+using DotVVM.Diagnostics.StatusPage;
 using DotVVM.Framework.Configuration;
 using DotVVM.Framework.Hosting;
 using DotVVM.Framework.ResourceManagement;
@@ -52,8 +53,16 @@ namespace DotvvmStatusPageDemo
 
 		public void ConfigureServices(IDotvvmServiceCollection options)
         {
-            options.AddStatusPage(pageOptions => pageOptions.CompileAfterPageLoads=false);
-            options.AddStatusPageApi();
+            options.AddStatusPage(pageOptions =>
+            {
+                pageOptions.CompileAfterPageLoads = false;
+                pageOptions.Authorize = context => Task.FromResult(true);
+            });
+
+            options.AddStatusPageApi(apiOptions =>
+            {
+                apiOptions.NonAuthorizedApiAccessMode = NonAuthorizedApiAccessMode.DetailedResponse;
+            });
             options.AddDefaultTempStorages("temp");
 
 		}
