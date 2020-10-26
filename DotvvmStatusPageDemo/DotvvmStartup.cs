@@ -56,9 +56,7 @@ namespace DotvvmStatusPageDemo
             options.AddStatusPage(pageOptions =>
             {
                 pageOptions.CompileAfterPageLoads = false;
-                pageOptions.Authorize = context => Task.FromResult(true);
             });
-
             options.AddStatusPageApi(apiOptions =>
             {
                 apiOptions.NonAuthorizedApiAccessMode = NonAuthorizedApiAccessMode.DetailedResponse;

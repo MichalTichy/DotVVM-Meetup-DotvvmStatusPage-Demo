@@ -1,4 +1,5 @@
-﻿using DotVVM.Framework.Compilation;
+﻿using System;
+using DotVVM.Framework.Compilation;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -31,7 +32,9 @@ namespace DotvvmStatusPageDemo
             var dotvvmConfiguration = app.UseDotVVM<DotvvmStartup>(env.ContentRootPath,modifyConfiguration:
                 configuration =>
                 {
-                    configuration.Markup.ViewCompilation.Mode = ViewCompilationMode.Lazy;
+                    configuration.Markup.ViewCompilation.Mode = ViewCompilationMode.AfterApplicationStart;
+                    
+
                 });
 
             dotvvmConfiguration.AssertConfigurationIsValid();

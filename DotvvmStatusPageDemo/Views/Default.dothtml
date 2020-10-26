@@ -6,5 +6,5 @@
         <dot:RouteLink RouteName="TheBad">the bad</dot:RouteLink> and 
         <dot:RouteLink RouteName="TheUgly">the ugly.</dot:RouteLink>
     </h1>
-    And of course the <dot:RouteLink RouteName="StatusPage">status page</dot:RouteLink>.
+    And of course the <dot:RouteLink RouteName="StatusPage">status page</dot:RouteLink> and <dot:RouteLink RouteName="StatusPageApi">status page API</dot:RouteLink>.
 </dot:Content>
